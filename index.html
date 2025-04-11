@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Access</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #0f0;
+      font-family: monospace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+      flex-direction: column;
+    }
+    .terminal {
+      text-align: center;
+    }
+    input {
+      background: transparent;
+      border: 1px solid #0f0;
+      color: #0f0;
+      padding: 10px;
+      margin-top: 20px;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <div class="terminal">
+    <img src="logo.png" alt="FVVYN Logo" width="200">
+    <p>Enter password to access:</p>
+    <input type="password" id="password" placeholder="Password">
+  </div>
+
+  <script>
+    document.getElementById("password").addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        if (this.value === "fv.019") {
+          window.location.href = "secret.html";
+        } else {
+          alert("Access Denied");
+        }
+      }
+    });
+  </script>
+</body>
+</html>
