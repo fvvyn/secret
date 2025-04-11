@@ -62,14 +62,19 @@
 
     input.addEventListener('keydown', function (e) {
       if (e.key === 'Enter') {
-        if (input.value === 'fv.019') {
-          textEl.innerText = '認証中...';
-          setTimeout(() => {
-            window.location.href = 'secret.html';
-          }, 1500);
-        } else {
-          textEl.innerText = 'パスワードが違います。';
-        }
+if (input.value === 'fv.019') {
+  textEl.innerText = '認証中...';
+  setTimeout(() => {
+    window.location.href = 'secret.html';
+  }, 1500);
+} else if (input.value === 'admin.666') {
+  textEl.innerText = '管理者モードへアクセス中...';
+  setTimeout(() => {
+    window.location.href = 'admin.html';
+  }, 1500);
+} else {
+  textEl.innerText = 'パスワードが違います。';
+}
       }
     });
 
