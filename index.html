@@ -32,6 +32,16 @@
       margin-top: 10px;
       padding: 5px 10px;
     }
+    @keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  50% { transform: translateX(10px); }
+  75% { transform: translateX(-10px); }
+  100% { transform: translateX(0); }
+}
+.shake {
+  animation: shake 0.3s;
+}
   </style>
 </head>
 <body>
@@ -74,8 +84,17 @@ if (input.value === 'fv.019') {
   }, 1500);
 } else {
   textEl.innerText = 'パスワードが違います。';
+textEl.classList.add('shake');
+setTimeout(() => {
+  textEl.classList.remove('shake');
+}, 300);
 }
+
+
+        
       }
+
+      
     });
 
     // スマホの傾きに応じてロゴを傾ける
